@@ -1,0 +1,3 @@
+GLenum StubGLGetError() {
+  return glGetError();
+}

@@ -1,0 +1,2 @@
+EmbedStream::~EmbedStream() {
+}

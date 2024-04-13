@@ -1,0 +1,3 @@
+AccessibilityUIElement::~AccessibilityUIElement()
+{
+}

@@ -1,0 +1,3 @@
+void HTMLMediaElement::DidNotifySubtreeInsertionsToDocument() {
+  UpdateControlsVisibility();
+}

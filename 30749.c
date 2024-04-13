@@ -1,0 +1,3 @@
+EOFStream::~EOFStream() {
+  delete str;
+}

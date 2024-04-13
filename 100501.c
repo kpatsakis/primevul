@@ -1,0 +1,2 @@
+void BaseSettingChange::Timeout() {
+}

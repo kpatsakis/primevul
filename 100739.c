@@ -1,0 +1,3 @@
+RenderBlock::RenderTextInfo::~RenderTextInfo()
+{
+}

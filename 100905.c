@@ -1,0 +1,4 @@
+ScriptLoader::~ScriptLoader()
+{
+    stopLoadRequest();
+}

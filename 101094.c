@@ -1,0 +1,2 @@
+AsyncReadPixelsCompletedQuery::~AsyncReadPixelsCompletedQuery() {
+}

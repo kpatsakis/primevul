@@ -1,0 +1,3 @@
+void ChildProcessLauncherHelper::ResetRegisteredFilesForTesting() {
+  ResetFilesToShareForTestingPosix();
+}

@@ -1,0 +1,2 @@
+CameraDeviceClient::~CameraDeviceClient() {
+}

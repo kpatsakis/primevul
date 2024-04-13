@@ -1,0 +1,33 @@
+jbig2_decode_generic_template3_unopt(Jbig2Ctx *ctx,
+                                     Jbig2Segment *segment,
+                                     const Jbig2GenericRegionParams *params, Jbig2ArithState *as, Jbig2Image *image, Jbig2ArithCx *GB_stats)
+{
+    const int GBW = image->width;
+    const int GBH = image->height;
+    uint32_t CONTEXT;
+    int x, y;
+    bool bit;
+
+    /* this version is generic and easy to understand, but very slow */
+
+    for (y = 0; y < GBH; y++) {
+        for (x = 0; x < GBW; x++) {
+            CONTEXT = 0;
+            CONTEXT |= jbig2_image_get_pixel(image, x - 1, y) << 0;
+            CONTEXT |= jbig2_image_get_pixel(image, x - 2, y) << 1;
+            CONTEXT |= jbig2_image_get_pixel(image, x - 3, y) << 2;
+            CONTEXT |= jbig2_image_get_pixel(image, x - 4, y) << 3;
+            CONTEXT |= jbig2_image_get_pixel(image, x + params->gbat[0], y + params->gbat[1]) << 4;
+            CONTEXT |= jbig2_image_get_pixel(image, x + 1, y - 1) << 5;
+            CONTEXT |= jbig2_image_get_pixel(image, x + 0, y - 1) << 6;
+            CONTEXT |= jbig2_image_get_pixel(image, x - 1, y - 1) << 7;
+            CONTEXT |= jbig2_image_get_pixel(image, x - 2, y - 1) << 8;
+            CONTEXT |= jbig2_image_get_pixel(image, x - 3, y - 1) << 9;
+            bit = jbig2_arith_decode(as, &GB_stats[CONTEXT]);
+            if (bit < 0)
+                        return -1;
+            jbig2_image_set_pixel(image, x, y, bit);
+        }
+    }
+    return 0;
+}

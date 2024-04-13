@@ -1,0 +1,3 @@
+BaseStream::~BaseStream() {
+  dict.free();
+}

@@ -1,0 +1,3 @@
+TextAutosizer::~TextAutosizer()
+{
+}

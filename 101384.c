@@ -1,0 +1,1 @@
+  NewlibPackagedAppTest() : PackagedAppTest("newlib") { }

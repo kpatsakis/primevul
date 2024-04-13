@@ -1,0 +1,3 @@
+  AutofillTest() {
+    EnableDOMAutomation();
+  }

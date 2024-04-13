@@ -1,0 +1,4 @@
+polkit_backend_interactive_authority_get_features (PolkitBackendAuthority *authority)
+{
+  return POLKIT_AUTHORITY_FEATURES_TEMPORARY_AUTHORIZATION;
+}

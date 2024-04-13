@@ -1,0 +1,2 @@
+FilterStream::~FilterStream() {
+}

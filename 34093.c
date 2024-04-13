@@ -1,0 +1,4 @@
+GetTimeInMillis (void)
+{
+  return GetTickCount ();
+}

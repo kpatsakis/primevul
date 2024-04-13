@@ -1,0 +1,2 @@
+OmniboxEditModel::~OmniboxEditModel() {
+}

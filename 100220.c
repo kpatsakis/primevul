@@ -1,0 +1,4 @@
+        virtual ~PendingCharactersCallback() 
+        {
+            xmlFree(s);
+        }

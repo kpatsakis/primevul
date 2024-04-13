@@ -1,0 +1,2 @@
+InputMethodBase::~InputMethodBase() {
+}

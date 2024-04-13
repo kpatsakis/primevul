@@ -1,0 +1,3 @@
+void RootWindowHostLinux::ToggleFullScreen() {
+  NOTIMPLEMENTED();
+}

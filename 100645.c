@@ -1,0 +1,2 @@
+AffiliationFetcher::~AffiliationFetcher() {
+}

@@ -1,0 +1,3 @@
+FileStream::~FileStream() {
+  close();
+}

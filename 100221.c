@@ -1,0 +1,4 @@
+        virtual ~PendingErrorCallback() 
+        {
+            free (message);
+        }

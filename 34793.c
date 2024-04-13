@@ -1,0 +1,22 @@
+_eXosip_is_public_address (const char *c_address)
+{
+  return (0 != strncmp (c_address, "192.168", 7)
+          && 0 != strncmp (c_address, "10.", 3)
+          && 0 != strncmp (c_address, "172.16.", 7)
+          && 0 != strncmp (c_address, "172.17.", 7)
+          && 0 != strncmp (c_address, "172.18.", 7)
+          && 0 != strncmp (c_address, "172.19.", 7)
+          && 0 != strncmp (c_address, "172.20.", 7)
+          && 0 != strncmp (c_address, "172.21.", 7)
+          && 0 != strncmp (c_address, "172.22.", 7)
+          && 0 != strncmp (c_address, "172.23.", 7)
+          && 0 != strncmp (c_address, "172.24.", 7)
+          && 0 != strncmp (c_address, "172.25.", 7)
+          && 0 != strncmp (c_address, "172.26.", 7)
+          && 0 != strncmp (c_address, "172.27.", 7)
+          && 0 != strncmp (c_address, "172.28.", 7)
+          && 0 != strncmp (c_address, "172.29.", 7)
+          && 0 != strncmp (c_address, "172.30.", 7)
+          && 0 != strncmp (c_address, "172.31.", 7)
+          && 0 != strncmp (c_address, "169.254", 7));
+}

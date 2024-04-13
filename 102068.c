@@ -1,0 +1,3 @@
+ExtensionNavigationThrottle::WillStartRequest() {
+  return WillStartOrRedirectRequest();
+}

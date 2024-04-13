@@ -1,0 +1,2 @@
+TopSitesCache::~TopSitesCache() {
+}

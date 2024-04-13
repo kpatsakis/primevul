@@ -1,0 +1,3 @@
+void NotificationsEngine::init()
+{
+}

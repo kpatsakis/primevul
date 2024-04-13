@@ -1,0 +1,50 @@
+RendererSchedulerImpl::AnyThread::AnyThread(
+    RendererSchedulerImpl* renderer_scheduler_impl)
+    : awaiting_touch_start_response(
+          false,
+          "RendererScheduler.AwaitingTouchstartResponse",
+          renderer_scheduler_impl,
+          &renderer_scheduler_impl->tracing_controller_,
+          YesNoStateToString),
+      in_idle_period(
+          false,
+          "RendererScheduler.InIdlePeriod",
+          renderer_scheduler_impl,
+          &renderer_scheduler_impl->tracing_controller_,
+          YesNoStateToString),
+      begin_main_frame_on_critical_path(
+          false,
+          "RendererScheduler.BeginMainFrameOnCriticalPath",
+          renderer_scheduler_impl,
+          &renderer_scheduler_impl->tracing_controller_,
+          YesNoStateToString),
+      last_gesture_was_compositor_driven(
+          false,
+          "RendererScheduler.LastGestureWasCompositorDriven",
+          renderer_scheduler_impl,
+          &renderer_scheduler_impl->tracing_controller_,
+          YesNoStateToString),
+      default_gesture_prevented(
+          true,
+          "RendererScheduler.DefaultGesturePrevented",
+          renderer_scheduler_impl,
+          &renderer_scheduler_impl->tracing_controller_,
+          YesNoStateToString),
+      have_seen_a_potentially_blocking_gesture(
+          false,
+          "RendererScheduler.HaveSeenPotentiallyBlockingGesture",
+          renderer_scheduler_impl,
+          &renderer_scheduler_impl->tracing_controller_,
+          YesNoStateToString),
+      waiting_for_meaningful_paint(
+          false,
+          "RendererScheduler.WaitingForMeaningfulPaint",
+          renderer_scheduler_impl,
+          &renderer_scheduler_impl->tracing_controller_,
+          YesNoStateToString),
+      have_seen_input_since_navigation(
+          false,
+          "RendererScheduler.HaveSeenInputSinceNavigation",
+          renderer_scheduler_impl,
+          &renderer_scheduler_impl->tracing_controller_,
+          YesNoStateToString) {}

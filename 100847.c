@@ -1,0 +1,3 @@
+  void OnAuthFailed() {
+    Shutdown(kInvalidOauthCredentialsExitCode);
+  }

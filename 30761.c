@@ -1,0 +1,3 @@
+RunLengthStream::~RunLengthStream() {
+  delete str;
+}

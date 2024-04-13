@@ -1,0 +1,4 @@
+CSoundFile::~CSoundFile()
+{
+	Destroy();
+}

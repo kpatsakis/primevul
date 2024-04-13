@@ -1,0 +1,38 @@
+static int _nfs4_do_setattr(struct inode *inode, struct rpc_cred *cred,
+			    struct nfs_fattr *fattr, struct iattr *sattr,
+			    struct nfs4_state *state)
+{
+	struct nfs_server *server = NFS_SERVER(inode);
+        struct nfs_setattrargs  arg = {
+                .fh             = NFS_FH(inode),
+                .iap            = sattr,
+		.server		= server,
+		.bitmask = server->attr_bitmask,
+        };
+        struct nfs_setattrres  res = {
+		.fattr		= fattr,
+		.server		= server,
+        };
+        struct rpc_message msg = {
+		.rpc_proc	= &nfs4_procedures[NFSPROC4_CLNT_SETATTR],
+		.rpc_argp	= &arg,
+		.rpc_resp	= &res,
+		.rpc_cred	= cred,
+        };
+	unsigned long timestamp = jiffies;
+	int status;
+
+	nfs_fattr_init(fattr);
+
+	if (nfs4_copy_delegation_stateid(&arg.stateid, inode)) {
+		/* Use that stateid */
+	} else if (state != NULL) {
+		nfs4_copy_stateid(&arg.stateid, state, current->files);
+	} else
+		memcpy(&arg.stateid, &zero_stateid, sizeof(arg.stateid));
+
+	status = rpc_call_sync(server->client, &msg, 0);
+	if (status == 0 && state != NULL)
+		renew_lease(server, timestamp);
+	return status;
+}

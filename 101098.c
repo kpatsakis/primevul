@@ -1,0 +1,2 @@
+  VirtualKeyboardControllerAlwaysEnabledTest()
+      : VirtualKeyboardControllerAutoTest() {}

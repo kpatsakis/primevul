@@ -1,0 +1,3 @@
+PrepareFrameAndViewForPrint::~PrepareFrameAndViewForPrint() {
+  FinishPrinting();
+}
